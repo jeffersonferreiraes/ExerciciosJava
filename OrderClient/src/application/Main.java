@@ -47,7 +47,7 @@ public class Main {
             order.addItem(orderItem);
 
         }
-
+        System.out.println();
         System.out.println(order);
 
         sc.close();

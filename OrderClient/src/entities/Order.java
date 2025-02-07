@@ -9,7 +9,7 @@ import java.util.List;
 
 public class Order {
 
-    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 
     private Date moment;
     private OrderStatus status;
@@ -59,20 +59,27 @@ public class Order {
         orderItems.remove(item);
     }
 
+    public Double total(){
+        Double sum = 0.0;
+        for (OrderItem c : orderItems){
+            sum += c.subTotal();
+        }
+        return sum;
+    }
+
     @Override
     public String toString() {
-        int sum = 0;
+
         StringBuilder sb = new StringBuilder();
         sb.append("ORDER SUMMARY: \n");
         sb.append("Order moment: " + sdf.format(moment) + "\n");
         sb.append("Order status: " + status + "\n");
-        sb.append("Client: " + client.getName() + " " + sdf.format(client.getBirthDate()) + " - " + client.getEmail() + "\n");
+        sb.append("Client: " + client + "\n");
         sb.append("Order items: \n");
         for (OrderItem c : orderItems){
             sb.append(c.getProduct().getName() + ", " + "$" + String.format("%.2f", c.getPrice())  + ", Quantity: " + c.getQuantity() + ", Subtotal: $" + String.format("%.2f", c.subTotal()) + "\n");
-            sum += c.subTotal();
         }
-        sb.append("Total: $" + String.format("%.2f", sum));
+        sb.append("Total: $" + String.format("%.2f", total()));
         return sb.toString();
     }
 }

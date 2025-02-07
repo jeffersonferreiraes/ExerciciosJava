@@ -44,4 +44,11 @@ public class Client {
     public void setBirthDate(Date birthDate) {
         this.birthDate = birthDate;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getName() + " " + sdf.format(getBirthDate()) + " - " + getEmail() + "\n");
+    return sb.toString();
+    }
 }
