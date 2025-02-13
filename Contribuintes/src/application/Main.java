@@ -20,7 +20,7 @@ public class Main {
         int n = sc.nextInt();
         sc.nextLine();
 
-        for (int i = 1; i <= n; i++){
+        for (int i = 1; i <= n; i++) {
             System.out.println("Tax payer #" + i + " data: ");
             System.out.print("Fisica ou Juridica? ");
             char option = sc.next().charAt(0);
@@ -29,13 +29,13 @@ public class Main {
             System.out.print("Renda anual: ");
             Double rendaAnual = sc.nextDouble();
             sc.nextLine();
-            if (option == 'f'){
+            if (option == 'f') {
                 System.out.print("Gastos com saude: ");
                 Double gastosSaude = sc.nextDouble();
                 sc.nextLine();
                 pessoa.add(new Fisica(name, rendaAnual, gastosSaude));
             }
-            if (option == 'j'){
+            if (option == 'j') {
                 System.out.print("Numero de funcionarios: ");
                 Integer numFunc = sc.nextInt();
                 sc.nextLine();
@@ -45,7 +45,7 @@ public class Main {
         System.out.println();
         System.out.println("IMPOSTO:");
         Double total = 0.0;
-        for (Pessoa p : pessoa){
+        for (Pessoa p : pessoa) {
             System.out.println(p);
             System.out.println("-------------------------------");
             total += p.ImpostoPago();
