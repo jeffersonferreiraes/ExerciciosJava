@@ -41,9 +41,12 @@ public class Main {
         catch (InputMismatchException e) {
             System.out.println("Erro: Entrada inválida. Certifique-se de inserir um valor correto.");
         }
+        finally {
+            System.out.println("Fechando programa");
+            sc.close();
+        }
 
 
 
-        sc.close();
     }
 }
