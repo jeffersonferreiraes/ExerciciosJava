@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/FaturaAluguel.iml" filepath="$PROJECT_DIR$/FaturaAluguel.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PagamentoOline.iml" filepath="$PROJECT_DIR$/PagamentoOline.iml" />
     </modules>
   </component>
 </project>
