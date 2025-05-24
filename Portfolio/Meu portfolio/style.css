@@ -1,0 +1,318 @@
+/* Resetando estilos padrão dos navegadores e definindo a fonte padrão */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Estilo base do corpo da página */
+body {
+  background-color: #0a192f; /* tom escuro de fundo */
+  color: #ccd6f6; /* cor de texto primária */
+  line-height: 1.6; /* altura da linha para melhor leitura */
+}
+
+/* Estilo do menu de navegação fixo no topo */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(10, 25, 47, 0.9); /* fundo semi-transparente */
+  backdrop-filter: blur(5px); /* efeito de desfoque no fundo */
+  z-index: 100; /* garante que fique acima de outros elementos */
+  padding: 20px 50px;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1); /* sombra leve */
+}
+
+/* Estilizando a lista de links de navegação */
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 40px; /* espaçamento entre os itens */
+}
+
+/* Estilo dos links de navegação */
+nav a {
+  color: #ccd6f6;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  position: relative;
+  padding: 5px 0;
+  transition: color 0.3s ease; /* transição suave na cor */
+}
+
+/* Cor do link ao passar o mouse */
+nav a:hover {
+  color: #64ffda;
+}
+
+/* Linha animada abaixo do link ao hover */
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #64ffda;
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%; /* anima a linha para preencher o link */
+}
+
+/* Estilizando as seções principais da página */
+section {
+  min-height: 100vh; /* ocupa a altura total da tela */
+  padding: 100px 15% 50px; /* espaçamento interno generoso */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Seção "Sobre Mim" com layout dividido */
+#sobre {
+  background: linear-gradient(135deg, #0a192f 0%, #112240 100%);
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.sobre-conteudo {
+  flex: 1; /* ocupa metade do espaço */
+}
+
+.sobre-imagem {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+/* Estilo da imagem de perfil */
+.sobre-imagem img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #64ffda;
+  box-shadow: 0 10px 30px rgba(100, 255, 218, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.sobre-imagem img:hover {
+  transform: scale(1.05); /* efeito de zoom ao hover */
+}
+
+/* Títulos principais */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #e6f1ff;
+}
+
+h1 span {
+  color: #64ffda; /* destaque para o nome ou palavra-chave */
+}
+
+/* Subtítulos com linha decorativa */
+h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #e6f1ff;
+  position: relative;
+  display: inline-block;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 70px;
+  height: 3px;
+  background-color: #64ffda;
+}
+
+/* Parágrafos de texto */
+p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  max-width: 600px;
+}
+
+/* Seção de Formação Acadêmica */
+#formacao {
+  background: linear-gradient(135deg, #112240 0%, #0a192f 100%);
+}
+
+.formacao-item {
+  margin-bottom: 30px;
+  padding-left: 20px;
+  border-left: 2px solid #64ffda;
+  position: relative;
+}
+
+.formacao-item h3 {
+  font-size: 1.5rem;
+  color: #e6f1ff;
+  margin-bottom: 10px;
+}
+
+.formacao-item p {
+  color: #8892b0; /* texto em tom mais suave */
+}
+
+.formacao-item::before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 10px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #64ffda; /* bolinha decorativa na timeline */
+}
+
+/* Seção de Trabalhos ou Portfólio */
+#trabalhos {
+  background: linear-gradient(135deg, #0a192f 0%, #112240 100%);
+}
+
+.trabalhos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px; /* espaçamento entre os cards */
+}
+
+.trabalho-card {
+  background-color: #112240;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.trabalho-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(100, 255, 218, 0.1);
+}
+
+.trabalho-imagem {
+  height: 200px;
+  overflow: hidden;
+}
+
+.trabalho-imagem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.trabalho-card:hover .trabalho-imagem img {
+  transform: scale(1.1);
+}
+
+.trabalho-conteudo {
+  padding: 20px;
+}
+
+.trabalho-conteudo h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #e6f1ff;
+}
+
+.trabalho-conteudo p {
+  color: #8892b0;
+  font-size: 1rem;
+}
+
+/* Seção de Contato */
+#contato {
+  background: linear-gradient(135deg, #112240 0%, #0a192f 100%);
+  text-align: center;
+}
+
+.contato-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #e6f1ff;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  background-color: #112240;
+  border: 1px solid #233554;
+  border-radius: 4px;
+  color: #ccd6f6;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #64ffda;
+}
+
+button {
+  background-color: transparent;
+  color: #64ffda;
+  border: 1px solid #64ffda;
+  padding: 12px 30px;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: rgba(100, 255, 218, 0.1);
+  transform: translateY(-3px);
+}
+
+/* Rodapé da página */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #0a192f;
+  color: #8892b0;
+  font-size: 0.9rem;
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 768px) {
+  #sobre {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .sobre-imagem {
+      margin-bottom: 30px;
+  }
+
+  h2::after {
+      left: 50%;
+      transform: translateX(-50%);
+  }
+
+  nav ul {
+      gap: 20px;
+  }
+}
